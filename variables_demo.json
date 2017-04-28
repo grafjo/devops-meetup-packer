@@ -1,0 +1,24 @@
+{
+  "builders": [
+    {
+      "type": "null",
+      "ssh_host": "{{user `ssh_host`}}",
+      "ssh_port": "{{user `ssh_port`}}",
+      "ssh_username": "{{user `ssh_username`}}",
+      "ssh_password": "{{user `ssh_password`}}"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": ["hostname", "env"]
+    }
+  ],
+  "post-processors": [],
+  "variables": {
+    "ssh_host": "{{env `PACKER_SSH_HOST`}}",
+    "ssh_port": "{{env `PACKER_SSH_PORT`}}",
+    "ssh_username": "vagrant",
+    "ssh_password": "vagrant"
+  }
+}

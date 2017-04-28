@@ -1,0 +1,7 @@
+puppet/.tmp
+puppet/modules
+puppet/vendor
+puppet/.bundle/
+puppet/.librarian/
+*.lock
+.vagrant

@@ -1,0 +1,27 @@
+{
+  "builders": [
+    {
+      "type": "docker",
+      "image": "debian:jessie-backports",
+      "discard": true,
+      "changes": [
+        "ENV LALA lulu"
+      ]
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": ["echo \"debug time\"", "env"]
+    },
+    {
+      "type": "shell",
+      "scripts": [
+        "scripts/die.sh"
+      ]
+    }
+  ],
+  "post-processors": [],
+  "variables": {
+  }
+}
